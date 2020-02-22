@@ -346,6 +346,7 @@ def start():
     cc_cmd = ['../coldcard-mpy', '-i', '../sim_boot.py',
                         str(oled_w), str(numpad_r), str(led_w)] \
                         + metal_args + sys.argv[1:]
+    print(f'Running {cc_cmd}')
     xterm = subprocess.Popen(['xterm', '-title', 'Coldcard Simulator REPL',
                                 '-geom', '132x40+450+40', '-e'] + cc_cmd,
                                 env=env,

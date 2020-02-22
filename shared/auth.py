@@ -200,8 +200,8 @@ class ApproveMessageSign(UserAuthorizedAction):
         MSG_CHARSET = range(32, 127)
         MSG_MAX_SPACES = 4      # impt. compared to -=- positioning
 
-        assert len(text) >= 2, "too short"
-        assert len(text) <= MSG_SIGNING_MAX_LENGTH, "too long"
+        assert len(text) >= 2, "too short: {}".format(text)
+        assert len(text) <= MSG_SIGNING_MAX_LENGTH, "too long: {}".format(text)
         run = 0
         for ch in text:
             assert ord(ch) in MSG_CHARSET, "bad char: 0x%02x" % ord(ch)
